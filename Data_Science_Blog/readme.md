@@ -1,5 +1,5 @@
 
-# Programmer, are you mentally healthy?
+# Project: Data Science Blog
 
 ## Table of Contents
 
