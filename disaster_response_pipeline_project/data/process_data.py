@@ -39,6 +39,10 @@ def clean_data(df):
 
     # drop duplicates
     df.drop_duplicates(inplace=True)
+    # drop column 'child_alone' which only contains 0
+    df.drop('child_alone', axis=1, inplace=True)
+    # drop rows realted = 2
+    df = df.loc[df['related'] != 2]
 
     return df
 
@@ -46,8 +50,8 @@ def clean_data(df):
 def save_data(df, database_filename):
     ''' Save the clean dataset into an sqlite database.
     '''
-    engine = create_engine('sqlite:///InsertDatabaseName.db')
-    df.to_sql('InsertTableName', engine, index=False)
+    engine = create_engine('sqlite:///'+str(database_filename))
+    df.to_sql('MessageCategories', engine, index=False, if_exsits = 'replace')
 
 
 def main():
