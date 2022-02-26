@@ -12,6 +12,8 @@ This respository contains all the projects for the Data Scientist Nanodegree Pro
 
 ## 1. [Data Science Blog](https://github.com/keithpink/udacity_data_science/tree/main/Data_Science_Blog)<a name="project1"></a>
 
+![blog](https://github.com/keithpink/udacity_data_science/tree/main/Data_Science_Blog/blog.png)
+
 To have a better understanding of programmer’s mental health, the project uses Stack Overflow’s developer survey data from 2021 to explore which are prevalent mental diseases among programmers, and what might be potential factors contributing to the disease.
 
 ## 2. [Disaster Response Pipeline](https://github.com/keithpink/udacity_data_science/tree/main/disaster_response_pipeline_project)<a name="project2"></a>
