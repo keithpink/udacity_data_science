@@ -4,12 +4,12 @@
 
 ## Table of Contents
 
-1. [Project Overview](#project overview)
+1. [Project Overview](#overview)
 2. [File Descriptions](#files)
 3. [Installation](#installation)
 4. [License](#license)
 
-## 1. Project Overview <a name="project overview"></a>
+## 1. Project Overview <a name="overview"></a>
 
 The purpose of the project is to analyze disaster data from [Appen](https://appen.com/) (formally Figure 8) to build a model for an API that classifies disaster messages.
 
@@ -46,7 +46,11 @@ The project will include a web app where an emergency worker can input a new mes
 ## 3. Installation<a name="installation"></a>
 
 
-### Installtion:
+### Installation:
+
+This project requires Python 3.x and the following Python libraries installed:
+Flask, Json, Matplotlib, Nltk, NumPy, Pandas, Pickle, Plotly, Re, Sklearn, Sqlalchemy, Sys.
+
 
 
 ### Instructions:
@@ -60,7 +64,9 @@ The project will include a web app where an emergency worker can input a new mes
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3. Go to http://0.0.0.0:3001/
+3. Go to http://0.0.0.0:3001/. Input a new message and get classification results in several categories
+
+![overview2](https://github.com/keithpink/udacity_data_science/blob/main/disaster_response_pipeline_project/sceenshot/overview2.png)
 
 ## 4. License<a name="license"></a>
 * This app was completed as part of the Udacity Data Scientist Nanodegree. 
