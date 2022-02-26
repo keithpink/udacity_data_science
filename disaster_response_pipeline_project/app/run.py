@@ -47,10 +47,12 @@ def index():
     aid_rel0 = df[df['aid_related']==0].groupby('genre').count()['message']
     genre_names = list(aid_rel1.index)
 
-    # let's calculate distribution of classes with 1
+    
     new_df = df.drop(['id', 'message', 'original'], axis = 1)
     
     def dist(genre): 
+    ''' get the distribution of the given genre
+    '''
         genre_dist = new_df[new_df['genre'] == genre].drop('genre', axis=1)
         genre_1 = genre_dist.sum()/len(genre_dist)
         genre_1 = genre_1.sort_values(ascending=False)
@@ -58,6 +60,7 @@ def index():
         genre_name = genre_1.index
         return genre_1, genre_0, genre_name
     
+    # apply the function for each genre
     direct_1, direct_0, direct_name = dist('direct')
     news_1, news_0, news_name = dist('news')
     social_1, social_0, social_name = dist('social')
