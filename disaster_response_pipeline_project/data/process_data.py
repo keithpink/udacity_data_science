@@ -1,3 +1,20 @@
+"""
+Preprocessing of Data
+Project: Disaster Response Pipeline 
+
+Sample Script Syntax:
+> python process_data.py <path to messages csv file> <path to categories csv file> <path to sqllite  destination db>
+
+Sample Script Execution:
+> python process_data.py disaster_messages.csv disaster_categories.csv disaster_response_db.db
+
+Arguments Description:
+    1) Path to the CSV file containing messages (e.g. disaster_messages.csv)
+    2) Path to the CSV file containing categories (e.g. disaster_categories.csv)
+    3) Path to SQLite destination database (e.g. DisasterResponse.db)
+"""
+
+
 import sys
 import numpy as np
 import pandas as pd
@@ -47,11 +64,11 @@ def clean_data(df):
     return df
 
 
-def save_data(df, database_filename):
+def save_data(df, database_filepath):
     ''' Save the clean dataset into an sqlite database.
     '''
-    engine = create_engine('sqlite:///'+str(database_filename))
-    df.to_sql('MessageCategories', engine, index=False, if_exsits = 'replace')
+    engine = create_engine('sqlite:///'+str(database_filepath))
+    df.to_sql('MessageCategories', engine, index=False, if_exists = 'replace')
 
 
 def main():
@@ -68,7 +85,8 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+        print(df.shape)
+
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
         

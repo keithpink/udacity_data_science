@@ -1,3 +1,19 @@
+
+"""
+Classifier Trainer
+Project: Disaster Response Pipeline 
+
+Sample Script Syntax:
+> python train_classifier.py <path to sqllite  destination db> <path to the pickle file>
+
+Sample Script Execution:
+> python train_classifier.py ../data/disaster_response_db.db classifier.pkl
+
+Arguments:
+    1) Path to SQLite destination database (e.g. DisasterResponse.db)
+    2) Path to pickle file name where ML model needs to be saved (e.g. classifier.pkl)
+"""
+
 import sys
 
 # import NPL libraries
@@ -76,8 +92,8 @@ def build_model():
 
     # grid search the hyperparameter
     parameters = {
-        'clf__n_estimators': [20, 50],
-        'clf__min_samples_split': [2, 5]
+        'clf__estimator__n_estimators': [20, 50],
+        'clf__estimator__min_samples_split': [2, 5]
     }
 
     cv = GridSearchCV(pipeline, param_grid=parameters)
