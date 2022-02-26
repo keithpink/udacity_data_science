@@ -1,5 +1,26 @@
 import sys
 
+# import NPL libraries
+import re
+import nltk
+import pickle
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+nltk.download(['words','punkt','stopwords','wordnet', 'averaged_perceptron_tagger'])
+
+# import ML libraries
+import numpy as np
+import pandas as pd
+from sqlalchemy import create_engine
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.multioutput import MultiOutputClassifier
+
 
 def load_data(database_filepath):
     ''' load data from database
@@ -9,8 +30,8 @@ def load_data(database_filepath):
     df = pd.read_sql('SELECT*FROM MessageCategories', engine)
 
     category_names = df.columns[4:]
-    X = df['message'].values[:50]
-    Y = df[category_names].values[:50]
+    X = df['message'].values[:]
+    Y = df[category_names].values[:]
 
     return X, Y, category_names
 
@@ -36,20 +57,51 @@ def tokenize(text):
 
 def build_model():
     ''' Build a machine learning and Gridsearch pipeline
-        take in message column as input and output classification results on the other 36 categories 
+        return the model with params tuned
     '''
-    return model
+    
+    # machine learning pipeline
+    pipeline = Pipeline([
+        ('features', FeatureUnion([
+            
+            ('text_pipeline', Pipeline([
+                ('vect', CountVectorizer(tokenizer=tokenize)),
+                ('tfidf', TfidfTransformer())
+            ]))
+        
+        ])),
+        
+        ('clf', MultiOutputClassifier(RandomForestClassifier()))
+    ])
+
+    # grid search the hyperparameter
+    parameters = {
+        'clf__n_estimators': [20, 50],
+        'clf__min_samples_split': [2, 5]
+    }
+
+    cv = GridSearchCV(pipeline, param_grid=parameters)
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-    ''' Report the f1 score, precision and recall 
+    ''' Show the accuracy, precision, and recall of the tuned model 
         for each output category of the dataset
     '''
-    pass
+    Y_pred_tuned = model.predict(X_test)
+
+    for i in range(len(category_names)):
+        print(classification_report(Y_test[:,i], Y_pred_tuned[:,i], target_names=category_names[i]))
+        accuracy = (Y_test[:,0]==Y_pred_tuned[:,0]).mean()
+        print('Accuracy is {}'.format(accuracy))
+
+    return
 
 
 def save_model(model, model_filepath):
-    pass
+    ''' save model to the given filepath
+    '''
+    pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
