@@ -1,5 +1,6 @@
 
 # Project: Data Science Blog
+![blog](https://github.com/keithpink/udacity_data_science/blob/main/Data_Science_Blog/blog.png)
 
 ## Table of Contents
 
