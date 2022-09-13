@@ -1,7 +1,7 @@
 # Arvato Customer Segmentation
 ## Data Scientist Capstone Project
 
-![IBM](https://github.com/keithpink/udacity_data_science/blob/main/recommendations_with_IBM/IBM.png)
+![arvato](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/arvato.webp)
 
 
 ## Table of Contents

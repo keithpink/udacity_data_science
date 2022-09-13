@@ -9,6 +9,7 @@ This respository contains all the projects for the Data Scientist Nanodegree Pro
 1. [Data Science Blog](#project1)
 2. [Disaster Response Pipeline](#project2)
 3. [Recommendations with IBM](#project3)
+4. [Arvato Customer Segmentation](#project4)
 
 
 ## 1. [Data Science Blog](https://github.com/keithpink/udacity_data_science/tree/main/Data_Science_Blog)<a name="project1"></a>
@@ -30,3 +31,10 @@ The project will include a web app where an emergency worker can input a new mes
 ![IBM](https://github.com/keithpink/udacity_data_science/blob/main/recommendations_with_IBM/IBM.png)
 
 This project will analyze the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them about new articles. The scrrenshot above is an example of what the dashboard could look like displaying articles on the IBM Watson Platform.
+
+
+## 4 [Arvato Customer Segmentation](https://github.com/keithpink/udacity_data_science/tree/main/Arvato_Customer_Segmentation)<a name="project4"></a>
+
+![arvato](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/arvato.webp)
+
+This project is to help a Mail-Order company to acquire new customers to sell its organic products. The goal of this project is to understand the customer demographics as compared to general population in order to decide whether to approach a person for future products.
