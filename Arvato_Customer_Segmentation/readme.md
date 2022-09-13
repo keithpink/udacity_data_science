@@ -1,7 +1,7 @@
 # Arvato Customer Segmentation
 ## Data Scientist Capstone Project
 
-This repository contains code and report for "Capstone Project - Arvato Customer Segmentation" done as part of Udacity Data Scientist Nanodegree program.
+![IBM](https://github.com/keithpink/udacity_data_science/blob/main/recommendations_with_IBM/IBM.png)
 
 
 ## Table of Contents
