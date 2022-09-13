@@ -35,6 +35,6 @@ This project will analyze the interactions that users have with articles on the 
 
 ## 4 [Arvato Customer Segmentation](https://github.com/keithpink/udacity_data_science/tree/main/Arvato_Customer_Segmentation)<a name="project4"></a>
 
-![arvato](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/arvato.webp =100*200)
+![arvato](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/arvato.png)
 
 This project is to help a Mail-Order company to acquire new customers to sell its organic products. The goal of this project is to understand the customer demographics as compared to general population in order to decide whether to approach a person for future products.
