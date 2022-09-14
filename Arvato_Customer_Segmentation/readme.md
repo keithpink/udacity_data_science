@@ -7,9 +7,9 @@
 ## Table of Contents
 
 1. [Project Overview](#projectoverview)
-- [File Descriptions](#files)
-- [Installment](#installment)
-- [Terms & Conditions](#terms)
+2. [File Descriptions](#files)
+3. [Installment](#installment)
+4. [Terms & Conditions](#terms)
 
 ***
 
@@ -28,9 +28,9 @@ This project is divided into two steps:
 
 ## File Descriptions <a name="files"></a>
 
-The ipynb file contains the main the implemented recommendation techniques;
+[Arvato Project Workbook](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/Arvato%20Project%20Workbook.ipynb) contains the main the implemented recommendation techniques;
 
-The pdf file contains the project final report.
+[Customer Segmentation Report](https://github.com/keithpink/udacity_data_science/blob/main/Arvato_Customer_Segmentation/Customer%20Segmentation%20Report.pdf) contains the project final report.
 
 <a id='installment'></a>
 ## Installment
